@@ -1,0 +1,128 @@
+﻿<AddIn name        = "MapToolkit"
+       author      = "wuhao"
+       copyright   = ""
+       url         = ""
+       description = ""
+       addInManagerHidden = "true">
+
+	<Manifest>
+		<Identity name = "SharpDevelop" version = "@SharpDevelopCoreVersion"/>
+	</Manifest>
+
+	<Runtime>
+		<Import assembly="WinFormGui.dll"/>
+			<!--<ConditionEvaluator name="IsCurrentTool" class="ICSharpCode.SharpDevelop.ActiveContentExtensionConditionEvaluator"/>-->
+	</Runtime>
+
+	<!-- Main Menu -->
+	<Path name = "/SharpDevelop/Workbench/MainMenu">
+		<!--<MenuItem id = "View" label = "${res:MainMenu.ViewMenu}" type="Menu">
+			<MenuItem id = "FullScreen"
+							label         = "${res:MainMenu.ViewMenu.FullScreen}"
+							icon        = "Icons.16x16.FullScreen"
+							class       = "SatGui.ViewContent.ToggleFullscreenCommand" />
+		</MenuItem>-->
+	</Path>
+
+	<Path name = "/SharpDevelop/Workbench/DisplayBindings">
+		<!--<DisplayBinding id               = "Browser"
+		                supportedformats = "Web Pages"
+		                class            = "SatGui.ViewContent.BrowserDisplayBinding"/>
+		<DisplayBinding id    = "Text"
+							insertafter = "Browser"
+							supportedformats = "Text Files,Source Files"
+							class = "SatGui.ViewContent.TextViewDisplayBinding" />-->
+	</Path>
+	<Path name = "/SharpDevelop/Workbench/DisplayBindings">
+		<!--<DisplayBinding id    = "Image"
+							insertbefore = "Text"
+							supportedformats = "图片"
+							class = "SatGui.ViewContent.ImageDisplayBinding" />-->
+	</Path>
+	<Path name = "/SharpDevelop/Workbench/DisplayBindings">
+		<DisplayBinding id    = "MapFile"
+							insertbefore = "Image"
+							supportedformats = "地图文件"
+							class = "WinFormGui.ViewContent.MapDisplayBinding" />
+	</Path>
+
+	<Path name = "/SharpDevelop/Workbench/Pads">
+		<Pad id       = "LayerTree"
+		     category = "Tools"
+		     title    = "${res:MainWindow.Windows.LayerTree}"
+		     icon     = "PadIcons.FileBrowser"
+		     shortcut = "Control|Alt|F"
+		     class    = "WinFormGui.Pad.LayerTree"
+			 defaultPosition = "Left"/>
+	</Path>
+	<!-- Pad==>FileScout 中使用到该节点的定义，用以对不同的文件类型在列表中显示不同的图标
+       多个中间必须用 ; 分隔-->
+	<Path name = "/Workspace/Icons">
+		<Icon id         = "ResourceFileIcon"
+		      extensions = ".resources;.resx"
+		      resource   = "Icons.16x16.ResourceFileIcon" />
+
+		<Icon id         = "XmlFileIcon"
+		      extensions = ".xml"
+		      resource   = "FileIcons.XmlIcon" />
+
+		<Icon id         = "DtdFileIcon"
+		      extensions = ".dtd"
+		      resource   = "Icons.16x16.DTDIcon"/>
+
+		<Icon id         = "XsdFileIcon"
+		      extensions = ".xsd"
+		      resource   = "Icons.16x16.XSDIcon"/>
+
+		<Icon id         = "XslFileIcon"
+		      extensions = ".xsl"
+		      resource   = "Icons.16x16.XSLIcon"/>
+
+		<Icon id         = "HtmlFileIcon"
+		      extensions = ".html;.htm"
+		      resource   = "Icons.16x16.HTMLIcon"/>
+
+		<Icon id         = "AspFileIcon"
+		      extensions = ".asp;.aspx"
+		      resource   = "Icons.16x16.ASPFileIcon"/>
+
+		<Icon id         = "AddInFileIcon"
+		      extensions = ".addin"
+		      resource   = "Icons.16x16.AddInIcon" />
+		<Icon id         = "TextFileIcon"
+		      extensions = ".txt;.doc;.ini"
+		      resource   = "Icons.16x16.TextFileIcon"/>
+
+		<Icon id         = "CssFileIcon"
+		      extensions = ".css"
+		      resource   = "Icons.16x16.CSSIcon"/>
+	</Path>
+
+	<Path name = "/SharpDevelop/ViewContent/Toolbar">
+		<ToolbarItem id = "Separator" type  = "Separator"/>
+		<!--<ToolbarItem id      = "Pan"
+							 type    = "CheckBox"
+							 icon    = "MapIcons.Pan"
+							 tooltip = "${res:AddIns.Map.Pan}"
+							 class   = "SatGui.ViewContent.PanTool"/>
+
+		<ToolbarItem id      = "ZoomIn"
+					 type    = "CheckBox"
+						 icon    = "MapIcons.ZoomIn"
+						 tooltip = "${res:AddIns.Map.ZoomIn}"
+						 class   = "SatGui.ViewContent.ZoomInTool"/>
+
+		<ToolbarItem id      = "ZoomOut"
+					 type    = "CheckBox"
+						 icon    = "MapIcons.ZoomOut"
+						 tooltip = "${res:AddIns.Map.ZoomOut}"
+						 class   = "SatGui.ViewContent.ZoomOutTool"/>
+
+		<ToolbarItem id      = "FullExtent"
+						 icon    = "MapIcons.FullExtent"
+						 tooltip = "${res:AddIns.Map.FullExtent}"
+						 class   = "SatGui.ViewContent.FullExtentCmd"/>-->
+		
+	</Path>
+
+</AddIn>

@@ -1,0 +1,16 @@
+# Debugging files
+*.pdb
+*.vshost.exe
+*.vshost.exe.config
+*.manifest
+
+# Folders
+obj/
+packages/
+bin/
+
+# Bin files
+*.exe
+*.dll
+
+*.suo
